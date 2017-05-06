@@ -113,6 +113,12 @@ class JobApi(object):
         if ('job_step' not in params) or (params['job_step'] is None):
             raise ValueError("Missing the required parameter `job_step` when calling `add_step`")
 
+        if 'tenant_id' in params and len(params['tenant_id']) > 64:
+            raise ValueError("Invalid value for parameter `tenant_id` when calling `add_step`, length must be less than or equal to `64`")
+        if 'tenant_id' in params and len(params['tenant_id']) < 3:
+            raise ValueError("Invalid value for parameter `tenant_id` when calling `add_step`, length must be greater than or equal to `3`")
+        if 'tenant_id' in params and not re.search('[a-z0-9-_\\.]{3,64}', params['tenant_id']):
+            raise ValueError("Invalid value for parameter `tenant_id` when calling `add_step`, must conform to the pattern `/[a-z0-9-_\\.]{3,64}/`")
 
         collection_formats = {}
 
@@ -231,6 +237,12 @@ class JobApi(object):
         if ('new_job_request' not in params) or (params['new_job_request'] is None):
             raise ValueError("Missing the required parameter `new_job_request` when calling `create`")
 
+        if 'tenant_id' in params and len(params['tenant_id']) > 64:
+            raise ValueError("Invalid value for parameter `tenant_id` when calling `create`, length must be less than or equal to `64`")
+        if 'tenant_id' in params and len(params['tenant_id']) < 3:
+            raise ValueError("Invalid value for parameter `tenant_id` when calling `create`, length must be greater than or equal to `3`")
+        if 'tenant_id' in params and not re.search('[a-z0-9-_\\.]{3,64}', params['tenant_id']):
+            raise ValueError("Invalid value for parameter `tenant_id` when calling `create`, must conform to the pattern `/[a-z0-9-_\\.]{3,64}/`")
 
         collection_formats = {}
 
@@ -344,6 +356,12 @@ class JobApi(object):
         if ('job_id' not in params) or (params['job_id'] is None):
             raise ValueError("Missing the required parameter `job_id` when calling `end_job`")
 
+        if 'tenant_id' in params and len(params['tenant_id']) > 64:
+            raise ValueError("Invalid value for parameter `tenant_id` when calling `end_job`, length must be less than or equal to `64`")
+        if 'tenant_id' in params and len(params['tenant_id']) < 3:
+            raise ValueError("Invalid value for parameter `tenant_id` when calling `end_job`, length must be greater than or equal to `3`")
+        if 'tenant_id' in params and not re.search('[a-z0-9-_\\.]{3,64}', params['tenant_id']):
+            raise ValueError("Invalid value for parameter `tenant_id` when calling `end_job`, must conform to the pattern `/[a-z0-9-_\\.]{3,64}/`")
 
         collection_formats = {}
 
@@ -455,6 +473,12 @@ class JobApi(object):
         if ('job_id' not in params) or (params['job_id'] is None):
             raise ValueError("Missing the required parameter `job_id` when calling `get`")
 
+        if 'tenant_id' in params and len(params['tenant_id']) > 64:
+            raise ValueError("Invalid value for parameter `tenant_id` when calling `get`, length must be less than or equal to `64`")
+        if 'tenant_id' in params and len(params['tenant_id']) < 3:
+            raise ValueError("Invalid value for parameter `tenant_id` when calling `get`, length must be greater than or equal to `3`")
+        if 'tenant_id' in params and not re.search('[a-z0-9-_\\.]{3,64}', params['tenant_id']):
+            raise ValueError("Invalid value for parameter `tenant_id` when calling `get`, must conform to the pattern `/[a-z0-9-_\\.]{3,64}/`")
 
         collection_formats = {}
 
@@ -566,6 +590,12 @@ class JobApi(object):
         if ('job_id' not in params) or (params['job_id'] is None):
             raise ValueError("Missing the required parameter `job_id` when calling `start_job`")
 
+        if 'tenant_id' in params and len(params['tenant_id']) > 64:
+            raise ValueError("Invalid value for parameter `tenant_id` when calling `start_job`, length must be less than or equal to `64`")
+        if 'tenant_id' in params and len(params['tenant_id']) < 3:
+            raise ValueError("Invalid value for parameter `tenant_id` when calling `start_job`, length must be greater than or equal to `3`")
+        if 'tenant_id' in params and not re.search('[a-z0-9-_\\.]{3,64}', params['tenant_id']):
+            raise ValueError("Invalid value for parameter `tenant_id` when calling `start_job`, must conform to the pattern `/[a-z0-9-_\\.]{3,64}/`")
 
         collection_formats = {}
 
